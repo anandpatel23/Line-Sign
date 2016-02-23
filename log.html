@@ -1,0 +1,1426 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="img/favicon.ico">
+
+    <title>Bell</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/sticky-footer-navbar.css" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <link href="css/styles.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!--<script type="text/javascript">
+    
+         var db = openDatabase('log.db', '1.0', 'Test DB', 2 * 1024 * 1024);
+         var msg;
+
+         console.log("before transaction");
+         db.transaction(function (tx) {
+          console.log("into transaction, before execute");
+          console.log("tx: ", tx);
+            tx.executeSql('SELECT * FROM *', [], function (tx, results) {
+               console.log("into execute, before length");               
+               var len = results.rows.length, i;
+               console.log("length is" + len);
+               msg = "<p>Found rows: " + len + "</p>";
+               document.querySelector('#status').innerHTML +=  msg;
+          
+               for (i = 0; i < len; i++){
+                  msg = "<p><b>" + results.rows.item(i).log + "</b></p>";
+                  document.querySelector('#status').innerHTML +=  msg;
+               }
+            }, null);
+         });
+      
+      </script>-->
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Bell</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="log.html">Log</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <!-- Begin page content -->
+    <div class="container">
+      <div class="page-header"><h1>Log</h1>
+
+        <table class="table table-hover">
+<thead><tr><th title="Field #1">dtg</th>
+<th title="Field #2">mac</th>
+<th title="Field #3">rssi</th>
+<th title="Field #4">ssid</th>
+<th title="Field #5">oui</th>
+</tr></thead>
+<tbody><tr><td>2016-02-10 04:03:36.750617</td>
+<td>ac:22:0b:49:a1:3b</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+<tr><td>2016-02-10 04:03:40.114338</td>
+<td>ac:22:0b:49:a1:3b</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+<tr><td>2016-02-10 04:03:40.146905</td>
+<td>ac:22:0b:49:a1:3b</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+<tr><td>2016-02-10 04:03:40.347061</td>
+<td>ac:22:0b:49:a1:3b</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+<tr><td>2016-02-10 04:03:40.383331</td>
+<td>ac:22:0b:49:a1:3b</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+<tr><td>2016-02-10 04:03:40.415332</td>
+<td>ac:22:0b:49:a1:3b</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+<tr><td>2016-02-10 04:03:40.616906</td>
+<td>ac:22:0b:49:a1:3b</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+<tr><td>2016-02-10 04:04:31.872432</td>
+<td>fc:db:b3:4c:27:e6</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Murata Manufacturing Co., Ltd.</td>
+</tr>
+<tr><td>2016-02-10 04:04:41.545561</td>
+<td>00:24:81:b6:94:76</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Hewlett-Packard Company</td>
+</tr>
+<tr><td>2016-02-10 04:04:44.956305</td>
+<td>44:6d:57:a9:11:16</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Liteon Technology Corporation</td>
+</tr>
+<tr><td>2016-02-10 04:04:47.616529</td>
+<td>44:6d:57:a9:11:16</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Liteon Technology Corporation</td>
+</tr>
+<tr><td>2016-02-10 04:04:47.654848</td>
+<td>44:6d:57:a9:11:16</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Liteon Technology Corporation</td>
+</tr>
+<tr><td>2016-02-10 04:04:47.691095</td>
+<td>44:6d:57:a9:11:16</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Liteon Technology Corporation</td>
+</tr>
+<tr><td>2016-02-10 04:04:48.206029</td>
+<td>24:fd:52:8f:61:2f</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Liteon Technology Corporation</td>
+</tr>
+<tr><td>2016-02-10 04:04:51.401582</td>
+<td>00:24:81:b6:94:76</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Hewlett-Packard Company</td>
+</tr>
+<tr><td>2016-02-10 04:04:52.052957</td>
+<td>fc:db:b3:e5:47:05</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Murata Manufacturing Co., Ltd.</td>
+</tr>
+<tr><td>2016-02-10 04:04:55.061192</td>
+<td>fc:db:b3:e5:47:05</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Murata Manufacturing Co., Ltd.</td>
+</tr>
+<tr><td>2016-02-10 04:04:55.098768</td>
+<td>fc:db:b3:e5:47:05</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Murata Manufacturing Co., Ltd.</td>
+</tr>
+<tr><td>2016-02-10 04:04:56.669788</td>
+<td>14:dd:a9:a8:96:33</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+<tr><td>2016-02-10 04:05:02.228841</td>
+<td>14:dd:a9:a8:96:33</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+<tr><td>2016-02-10 04:05:02.270990</td>
+<td>14:dd:a9:a8:96:33</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+<tr><td>2016-02-10 04:05:03.493673</td>
+<td>e8:2a:ea:7a:21:e1</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:07:55.336922</td>
+<td>00:24:81:b6:94:76</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Hewlett-Packard Company</td>
+</tr>
+<tr><td>2016-02-10 04:09:00.203302</td>
+<td>92:68:c3:d6:ef:7e</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Admin OUI</td>
+</tr>
+<tr><td>2016-02-10 04:09:58.758649</td>
+<td>44:6d:57:a9:11:16</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Liteon Technology Corporation</td>
+</tr>
+<tr><td>2016-02-10 04:11:21.905208</td>
+<td>e8:50:8b:d9:3e:de</td>
+<td>0</td>
+<td>dragonfly3</td>
+<td>Samsung Electro Mechanics co., LTD.</td>
+</tr>
+<tr><td>2016-02-10 04:11:24.386975</td>
+<td>e8:50:8b:d9:3e:de</td>
+<td>0</td>
+<td>dragonfly3</td>
+<td>Samsung Electro Mechanics co., LTD.</td>
+</tr>
+<tr><td>2016-02-10 04:11:24.876033</td>
+<td>1c:e6:2b:91:91:06</td>
+<td>0</td>
+<td>VNBAPTIST</td>
+<td>Apple</td>
+</tr>
+<tr><td>2016-02-10 04:11:26.917038</td>
+<td>1c:e6:2b:91:91:06</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Apple</td>
+</tr>
+<tr><td>2016-02-10 04:11:26.981760</td>
+<td>1c:e6:2b:91:91:06</td>
+<td>0</td>
+<td>VNBAPTIST</td>
+<td>Apple</td>
+</tr>
+<tr><td>2016-02-10 04:11:27.015656</td>
+<td>1c:e6:2b:91:91:06</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Apple</td>
+</tr>
+<tr><td>2016-02-10 04:11:27.069933</td>
+<td>2a:60:72:f8:4a:b6</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Admin OUI</td>
+</tr>
+<tr><td>2016-02-10 04:11:34.817685</td>
+<td>68:17:29:f4:59:07</td>
+<td>0</td>
+<td>Unimatrix Zero</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:11:36.683818</td>
+<td>68:17:29:f4:59:07</td>
+<td>0</td>
+<td>dragonfly3</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:11:36.721232</td>
+<td>68:17:29:f4:59:07</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:11:36.927715</td>
+<td>68:17:29:f4:59:07</td>
+<td>0</td>
+<td>Unimatrix Zero</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:11:37.439501</td>
+<td>34:c0:59:02:d6:d5</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Apple</td>
+</tr>
+<tr><td>2016-02-10 04:14:45.312318</td>
+<td>28:b2:bd:12:b5:56</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:14:47.720511</td>
+<td>28:b2:bd:12:b5:56</td>
+<td>0</td>
+<td>dragonfly3</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:14:48.136994</td>
+<td>00:26:ab:69:2e:0e</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>SEIKO EPSON CORPORATION</td>
+</tr>
+<tr><td>2016-02-10 04:14:50.327447</td>
+<td>00:26:ab:69:2e:0e</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>SEIKO EPSON CORPORATION</td>
+</tr>
+<tr><td>2016-02-10 04:14:50.363038</td>
+<td>00:26:ab:69:2e:0e</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>SEIKO EPSON CORPORATION</td>
+</tr>
+<tr><td>2016-02-10 04:14:50.414422</td>
+<td>28:b2:bd:12:b5:56</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:14:50.449035</td>
+<td>28:b2:bd:12:b5:56</td>
+<td>0</td>
+<td>dragonfly3</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:14:50.499172</td>
+<td>28:b2:bd:12:b5:56</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:14:50.534436</td>
+<td>28:b2:bd:12:b5:56</td>
+<td>0</td>
+<td>dragonfly3</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:14:50.585423</td>
+<td>28:b2:bd:12:b5:56</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:14:50.993276</td>
+<td>fc:f8:ae:df:c3:57</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:17:02.477037</td>
+<td>ac:cf:85:b5:01:ad</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:17:04.832519</td>
+<td>ac:cf:85:b5:01:ad</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:17:05.212956</td>
+<td>00:24:81:b6:94:76</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Hewlett-Packard Company</td>
+</tr>
+<tr><td>2016-02-10 04:17:07.290510</td>
+<td>00:24:81:b6:94:76</td>
+<td>0</td>
+<td>SigmaplusEOL1</td>
+<td>Hewlett-Packard Company</td>
+</tr>
+<tr><td>2016-02-10 04:17:07.781403</td>
+<td>ac:cf:85:28:80:72</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:21:45.651249</td>
+<td>bc:54:36:1a:7b:91</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:21:45.683193</td>
+<td>bc:54:36:1a:7b:91</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:21:46.045480</td>
+<td>a4:db:30:3b:83:df</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Liteon Technology Corporation</td>
+</tr>
+<tr><td>2016-02-10 04:21:46.547892</td>
+<td>e8:50:8b:d9:3e:de</td>
+<td>0</td>
+<td>dragonfly3</td>
+<td>Samsung Electro Mechanics co., LTD.</td>
+</tr>
+<tr><td>2016-02-10 04:21:46.596979</td>
+<td>e8:50:8b:d9:3e:de</td>
+<td>0</td>
+<td>dragonfly3</td>
+<td>Samsung Electro Mechanics co., LTD.</td>
+</tr>
+<tr><td>2016-02-10 04:21:46.850004</td>
+<td>ac:cf:85:b5:01:ad</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:21:47.085171</td>
+<td>e0:94:67:03:20:48</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:21:47.121765</td>
+<td>e0:94:67:03:20:48</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:21:47.152787</td>
+<td>e0:94:67:03:20:48</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:21:47.341493</td>
+<td>ac:cf:85:b5:01:ad</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:21:47.379261</td>
+<td>ac:cf:85:b5:01:ad</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:21:47.473383</td>
+<td>bc:54:36:1a:7b:91</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:21:47.694744</td>
+<td>bc:54:36:1a:7b:91</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:21:48.104922</td>
+<td>e8:2a:ea:7a:21:e1</td>
+<td>0</td>
+<td>dragonfly3</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:21:48.390511</td>
+<td>4c:bb:58:5d:3f:a7</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Chicony Electronics Co., Ltd.</td>
+</tr>
+<tr><td>2016-02-10 04:21:48.713485</td>
+<td>d0:a6:37:ec:20:ab</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Apple</td>
+</tr>
+<tr><td>2016-02-10 04:21:48.899914</td>
+<td>d0:a6:37:ec:20:ab</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Apple</td>
+</tr>
+<tr><td>2016-02-10 04:21:50.022254</td>
+<td>2c:33:7a:40:9b:59</td>
+<td>0</td>
+<td>eduroam</td>
+<td>Hon Hai Precision Ind. Co.,Ltd.</td>
+</tr>
+<tr><td>2016-02-10 04:21:50.072290</td>
+<td>2c:33:7a:40:9b:59</td>
+<td>0</td>
+<td>eduroam</td>
+<td>Hon Hai Precision Ind. Co.,Ltd.</td>
+</tr>
+<tr><td>2016-02-10 04:21:50.103234</td>
+<td>2c:33:7a:40:9b:59</td>
+<td>0</td>
+<td>eduroam</td>
+<td>Hon Hai Precision Ind. Co.,Ltd.</td>
+</tr>
+<tr><td>2016-02-10 04:21:50.353949</td>
+<td>a4:b8:05:c9:80:a3</td>
+<td>0</td>
+<td>dragonfly3</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:21:50.389120</td>
+<td>a4:b8:05:c9:80:a3</td>
+<td>0</td>
+<td>dragonfly3</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:21:50.553315</td>
+<td>00:24:81:b6:94:76</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Hewlett-Packard Company</td>
+</tr>
+<tr><td>2016-02-10 04:21:50.743301</td>
+<td>00:24:81:b6:94:76</td>
+<td>0</td>
+<td>SigmaplusEOL1</td>
+<td>Hewlett-Packard Company</td>
+</tr>
+<tr><td>2016-02-10 04:21:50.990192</td>
+<td>d0:7e:35:6c:fe:80</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:21:51.025792</td>
+<td>d0:7e:35:6c:fe:80</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:21:51.566707</td>
+<td>00:26:ab:69:2e:0e</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>SEIKO EPSON CORPORATION</td>
+</tr>
+<tr><td>2016-02-10 04:21:51.602219</td>
+<td>00:26:ab:69:2e:0e</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>SEIKO EPSON CORPORATION</td>
+</tr>
+<tr><td>2016-02-10 04:21:51.634599</td>
+<td>00:26:ab:69:2e:0e</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>SEIKO EPSON CORPORATION</td>
+</tr>
+<tr><td>2016-02-10 04:21:52.261707</td>
+<td>00:24:81:b6:94:76</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Hewlett-Packard Company</td>
+</tr>
+<tr><td>2016-02-10 04:21:52.293445</td>
+<td>00:24:81:b6:94:76</td>
+<td>0</td>
+<td>SigmaplusEOL1</td>
+<td>Hewlett-Packard Company</td>
+</tr>
+<tr><td>2016-02-10 04:21:52.623099</td>
+<td>ac:22:0b:49:a1:3b</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+<tr><td>2016-02-10 04:21:52.651568</td>
+<td>ac:22:0b:49:a1:3b</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+<tr><td>2016-02-10 04:21:52.843096</td>
+<td>ac:22:0b:49:a1:3b</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+<tr><td>2016-02-10 04:21:53.349541</td>
+<td>00:ae:fa:65:14:1c</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Murata Manufacturing Co., Ltd.</td>
+</tr>
+<tr><td>2016-02-10 04:21:53.384706</td>
+<td>00:ae:fa:65:14:1c</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Murata Manufacturing Co., Ltd.</td>
+</tr>
+<tr><td>2016-02-10 04:21:53.420621</td>
+<td>00:ae:fa:65:14:1c</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Murata Manufacturing Co., Ltd.</td>
+</tr>
+<tr><td>2016-02-10 04:21:53.521871</td>
+<td>bc:54:36:1a:7b:91</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:21:53.551672</td>
+<td>bc:54:36:1a:7b:91</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:21:54.112587</td>
+<td>28:b2:bd:10:4a:4b</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:21:54.323928</td>
+<td>40:b0:fa:6b:80:0d</td>
+<td>0</td>
+<td>dragonfly3</td>
+<td>LG Electronics</td>
+</tr>
+<tr><td>2016-02-10 04:21:54.611746</td>
+<td>28:b2:bd:12:b5:56</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:21:54.862560</td>
+<td>1c:e6:2b:91:91:06</td>
+<td>0</td>
+<td>VNBAPTIST</td>
+<td>Apple</td>
+</tr>
+<tr><td>2016-02-10 04:21:55.076673</td>
+<td>1c:e6:2b:91:91:06</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Apple</td>
+</tr>
+<tr><td>2016-02-10 04:21:55.110987</td>
+<td>1c:e6:2b:91:91:06</td>
+<td>0</td>
+<td>VNBAPTIST</td>
+<td>Apple</td>
+</tr>
+<tr><td>2016-02-10 04:21:55.145105</td>
+<td>1c:e6:2b:91:91:06</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Apple</td>
+</tr>
+<tr><td>2016-02-10 04:21:55.504696</td>
+<td>60:6c:66:58:24:9c</td>
+<td>0</td>
+<td>dragonfly3</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:21:55.708422</td>
+<td>60:6c:66:58:24:9c</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:21:55.743585</td>
+<td>2c:33:7a:40:9b:59</td>
+<td>0</td>
+<td>eduroam</td>
+<td>Hon Hai Precision Ind. Co.,Ltd.</td>
+</tr>
+<tr><td>2016-02-10 04:21:56.765050</td>
+<td>c8:69:cd:91:2c:d0</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:21:56.800166</td>
+<td>c8:69:cd:91:2c:d0</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:21:56.842672</td>
+<td>c8:69:cd:91:2c:d0</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:21:56.891894</td>
+<td>ac:cf:85:b5:01:ad</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:21:56.926603</td>
+<td>ac:cf:85:b5:01:ad</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:21:56.959695</td>
+<td>ac:cf:85:b5:01:ad</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:21:56.995470</td>
+<td>ac:cf:85:b5:01:ad</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:21:57.036699</td>
+<td>ac:cf:85:b5:01:ad</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:21:57.070453</td>
+<td>ac:cf:85:b5:01:ad</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:21:57.511985</td>
+<td>bc:54:36:1a:7b:91</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:21:57.744928</td>
+<td>ac:cf:85:28:80:72</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:21:57.782660</td>
+<td>bc:54:36:1a:7b:91</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:21:57.930840</td>
+<td>a0:99:9b:0a:b6:99</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Apple</td>
+</tr>
+<tr><td>2016-02-10 04:21:58.150073</td>
+<td>a0:99:9b:0a:b6:99</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Apple</td>
+</tr>
+<tr><td>2016-02-10 04:21:58.183545</td>
+<td>a0:99:9b:0a:b6:99</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Apple</td>
+</tr>
+<tr><td>2016-02-10 04:21:58.554553</td>
+<td>fc:db:b3:e5:47:05</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Murata Manufacturing Co., Ltd.</td>
+</tr>
+<tr><td>2016-02-10 04:21:58.590232</td>
+<td>fc:db:b3:e5:47:05</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Murata Manufacturing Co., Ltd.</td>
+</tr>
+<tr><td>2016-02-10 04:22:00.011751</td>
+<td>00:24:81:b6:94:76</td>
+<td>0</td>
+<td>SigmaplusEOL1</td>
+<td>Hewlett-Packard Company</td>
+</tr>
+<tr><td>2016-02-10 04:22:00.041446</td>
+<td>d0:a6:37:ec:20:ab</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Apple</td>
+</tr>
+<tr><td>2016-02-10 04:22:00.234634</td>
+<td>d0:a6:37:ec:20:ab</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Apple</td>
+</tr>
+<tr><td>2016-02-10 04:22:00.272593</td>
+<td>e8:2a:ea:7a:21:e1</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:22:00.302257</td>
+<td>e8:2a:ea:7a:21:e1</td>
+<td>0</td>
+<td>dragonfly3</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:22:00.348783</td>
+<td>d0:a6:37:ec:20:ab</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Apple</td>
+</tr>
+<tr><td>2016-02-10 04:22:00.382427</td>
+<td>e8:2a:ea:7a:21:e1</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:22:00.427536</td>
+<td>e8:2a:ea:7a:21:e1</td>
+<td>0</td>
+<td>dragonfly3</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:22:01.197624</td>
+<td>9c:4e:36:93:22:f4</td>
+<td>0</td>
+<td>eduroam</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:22:01.251836</td>
+<td>9c:4e:36:93:22:f4</td>
+<td>0</td>
+<td>eduroam</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:22:01.280212</td>
+<td>9c:4e:36:93:22:f4</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:22:01.931789</td>
+<td>00:24:81:b6:94:76</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Hewlett-Packard Company</td>
+</tr>
+<tr><td>2016-02-10 04:22:01.961168</td>
+<td>00:24:81:b6:94:76</td>
+<td>0</td>
+<td>SigmaplusEOL1</td>
+<td>Hewlett-Packard Company</td>
+</tr>
+<tr><td>2016-02-10 04:22:03.443689</td>
+<td>a4:db:30:3b:83:df</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Liteon Technology Corporation</td>
+</tr>
+<tr><td>2016-02-10 04:22:03.481861</td>
+<td>a4:db:30:3b:83:df</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Liteon Technology Corporation</td>
+</tr>
+<tr><td>2016-02-10 04:22:03.653560</td>
+<td>bc:54:36:1a:7b:91</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:22:03.690654</td>
+<td>bc:54:36:1a:7b:91</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:22:04.271897</td>
+<td>a4:b8:05:c9:80:a3</td>
+<td>0</td>
+<td>dragonfly3</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:22:04.301316</td>
+<td>a4:b8:05:c9:80:a3</td>
+<td>0</td>
+<td>dragonfly3</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:22:05.813523</td>
+<td>64:5a:04:83:f2:e2</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Chicony Electronics Co., Ltd.</td>
+</tr>
+<tr><td>2016-02-10 04:22:06.147788</td>
+<td>14:dd:a9:a8:96:33</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+<tr><td>2016-02-10 04:22:06.182074</td>
+<td>14:dd:a9:a8:96:33</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+<tr><td>2016-02-10 04:22:06.371166</td>
+<td>14:dd:a9:a8:96:33</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+<tr><td>2016-02-10 04:22:06.406544</td>
+<td>64:5a:04:83:f2:e2</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Chicony Electronics Co., Ltd.</td>
+</tr>
+<tr><td>2016-02-10 04:22:06.584541</td>
+<td>c0:bd:d1:7e:36:02</td>
+<td>0</td>
+<td>dragonfly3</td>
+<td>Samsung Electro Mechanics co., LTD.</td>
+</tr>
+<tr><td>2016-02-10 04:22:07.302028</td>
+<td>64:5a:04:83:f2:e2</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Chicony Electronics Co., Ltd.</td>
+</tr>
+<tr><td>2016-02-10 04:22:07.353307</td>
+<td>64:5a:04:83:f2:e2</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Chicony Electronics Co., Ltd.</td>
+</tr>
+<tr><td>2016-02-10 04:22:07.387516</td>
+<td>a4:b8:05:c9:80:a3</td>
+<td>0</td>
+<td>dragonfly3</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:22:07.435487</td>
+<td>a4:b8:05:c9:80:a3</td>
+<td>0</td>
+<td>dragonfly3</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:22:07.551781</td>
+<td>ac:cf:85:28:80:72</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:22:07.741974</td>
+<td>00:24:81:b6:94:76</td>
+<td>0</td>
+<td>SigmaplusEOL1</td>
+<td>Hewlett-Packard Company</td>
+</tr>
+<tr><td>2016-02-10 04:22:07.821868</td>
+<td>28:b2:bd:10:4a:4b</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:22:08.101777</td>
+<td>ac:22:0b:49:a1:3b</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+<tr><td>2016-02-10 04:22:08.133504</td>
+<td>ac:22:0b:49:a1:3b</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+<tr><td>2016-02-10 04:22:08.168403</td>
+<td>ac:22:0b:49:a1:3b</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+<tr><td>2016-02-10 04:22:08.205275</td>
+<td>ac:22:0b:49:a1:3b</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+<tr><td>2016-02-10 04:22:08.424135</td>
+<td>ac:22:0b:49:a1:3b</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+<tr><td>2016-02-10 04:22:08.459785</td>
+<td>ac:22:0b:49:a1:3b</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+<tr><td>2016-02-10 04:22:08.665078</td>
+<td>ac:22:0b:49:a1:3b</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+<tr><td>2016-02-10 04:22:08.698632</td>
+<td>ac:22:0b:49:a1:3b</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+<tr><td>2016-02-10 04:22:09.572392</td>
+<td>d0:7e:35:f2:bd:b3</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:22:09.602393</td>
+<td>d0:7e:35:f2:bd:b3</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:22:09.911024</td>
+<td>00:1b:9e:bd:00:09</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASKEY  COMPUTER  CORP</td>
+</tr>
+<tr><td>2016-02-10 04:22:10.651845</td>
+<td>c8:69:cd:91:2c:d0</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:22:10.680651</td>
+<td>c8:69:cd:91:2c:d0</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:22:10.731771</td>
+<td>c8:69:cd:91:2c:d0</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:22:10.775734</td>
+<td>c8:69:cd:91:2c:d0</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:22:10.809896</td>
+<td>c8:69:cd:91:2c:d0</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:22:10.860040</td>
+<td>00:1b:9e:bd:00:09</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASKEY  COMPUTER  CORP</td>
+</tr>
+<tr><td>2016-02-10 04:22:10.894611</td>
+<td>14:dd:a9:a8:96:33</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+<tr><td>2016-02-10 04:22:10.927448</td>
+<td>00:1b:9e:bd:00:09</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASKEY  COMPUTER  CORP</td>
+</tr>
+<tr><td>2016-02-10 04:22:11.122142</td>
+<td>14:dd:a9:a8:96:33</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+<tr><td>2016-02-10 04:22:11.152399</td>
+<td>14:dd:a9:a8:96:33</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+<tr><td>2016-02-10 04:22:11.591844</td>
+<td>00:24:81:b6:94:76</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Hewlett-Packard Company</td>
+</tr>
+<tr><td>2016-02-10 04:22:11.928992</td>
+<td>c4:85:08:12:63:bc</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:22:12.011692</td>
+<td>c4:85:08:12:63:bc</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:22:12.232641</td>
+<td>c4:85:08:12:63:bc</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:22:12.263375</td>
+<td>c4:85:08:12:63:bc</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:22:12.603532</td>
+<td>e8:2a:ea:7a:21:e1</td>
+<td>0</td>
+<td>dragonfly3</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:22:12.640975</td>
+<td>e8:2a:ea:7a:21:e1</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:22:12.846451</td>
+<td>e8:2a:ea:7a:21:e1</td>
+<td>0</td>
+<td>dragonfly3</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:22:12.880928</td>
+<td>e8:2a:ea:7a:21:e1</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:22:13.070835</td>
+<td>e8:2a:ea:7a:21:e1</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:22:13.104635</td>
+<td>e8:2a:ea:7a:21:e1</td>
+<td>0</td>
+<td>dragonfly3</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:22:13.138809</td>
+<td>e8:2a:ea:7a:21:e1</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:22:13.189789</td>
+<td>e8:2a:ea:7a:21:e1</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:22:13.370011</td>
+<td>bc:52:b7:f1:cc:a2</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Apple</td>
+</tr>
+<tr><td>2016-02-10 04:22:13.408559</td>
+<td>bc:52:b7:f1:cc:a2</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Apple</td>
+</tr>
+<tr><td>2016-02-10 04:22:13.566773</td>
+<td>a4:b8:05:be:07:ab</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:22:13.600836</td>
+<td>a4:b8:05:be:07:ab</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:22:13.813736</td>
+<td>10:41:7f:18:28:36</td>
+<td>0</td>
+<td>dragonfly3</td>
+<td>Apple Inc</td>
+</tr>
+<tr><td>2016-02-10 04:22:14.003949</td>
+<td>10:41:7f:18:28:36</td>
+<td>0</td>
+<td>dragonfly3</td>
+<td>Apple Inc</td>
+</tr>
+<tr><td>2016-02-10 04:22:14.168148</td>
+<td>9c:d9:17:42:e8:fd</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Motorola Mobility LLC</td>
+</tr>
+<tr><td>2016-02-10 04:22:14.378784</td>
+<td>9c:d9:17:42:e8:fd</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Motorola Mobility LLC</td>
+</tr>
+<tr><td>2016-02-10 04:22:15.461792</td>
+<td>00:24:81:b6:94:76</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Hewlett-Packard Company</td>
+</tr>
+<tr><td>2016-02-10 04:22:15.531743</td>
+<td>bc:54:36:1a:7b:91</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:22:15.783075</td>
+<td>bc:54:36:1a:7b:91</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:22:16.021916</td>
+<td>14:dd:a9:a8:96:33</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+<tr><td>2016-02-10 04:22:16.051759</td>
+<td>14:dd:a9:a8:96:33</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+<tr><td>2016-02-10 04:22:16.221827</td>
+<td>e8:50:8b:d9:3e:de</td>
+<td>0</td>
+<td>dragonfly3</td>
+<td>Samsung Electro Mechanics co., LTD.</td>
+</tr>
+<tr><td>2016-02-10 04:22:16.408736</td>
+<td>e8:50:8b:d9:3e:de</td>
+<td>0</td>
+<td>dragonfly3</td>
+<td>Samsung Electro Mechanics co., LTD.</td>
+</tr>
+<tr><td>2016-02-10 04:22:16.561746</td>
+<td>c0:bd:d1:7e:36:02</td>
+<td>0</td>
+<td>dragonfly3</td>
+<td>Samsung Electro Mechanics co., LTD.</td>
+</tr>
+<tr><td>2016-02-10 04:22:16.591408</td>
+<td>c0:bd:d1:7e:36:02</td>
+<td>0</td>
+<td>dragonfly3</td>
+<td>Samsung Electro Mechanics co., LTD.</td>
+</tr>
+<tr><td>2016-02-10 04:22:17.431638</td>
+<td>34:c0:59:02:d6:d5</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Apple</td>
+</tr>
+<tr><td>2016-02-10 04:22:17.479402</td>
+<td>34:c0:59:02:d6:d5</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Apple</td>
+</tr>
+<tr><td>2016-02-10 04:22:17.571881</td>
+<td>ac:cf:85:28:80:72</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:22:17.603067</td>
+<td>ac:cf:85:28:80:72</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:22:17.797460</td>
+<td>80:86:f2:bc:eb:52</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:22:17.849831</td>
+<td>80:86:f2:bc:eb:52</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Intel Corporate</td>
+</tr>
+<tr><td>2016-02-10 04:22:18.502164</td>
+<td>bc:54:36:1a:7b:91</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:22:20.674196</td>
+<td>bc:54:36:1a:7b:91</td>
+<td>0</td>
+<td>drexelguest</td>
+<td>Unknown</td>
+</tr>
+<tr><td>2016-02-10 04:22:20.735269</td>
+<td>a0:99:9b:0a:b6:99</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Apple</td>
+</tr>
+<tr><td>2016-02-10 04:22:20.956087</td>
+<td>a0:99:9b:0a:b6:99</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>Apple</td>
+</tr>
+<tr><td>2016-02-10 04:22:20.990580</td>
+<td>ac:22:0b:49:a1:3b</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+<tr><td>2016-02-10 04:22:21.192339</td>
+<td>ac:22:0b:49:a1:3b</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+<tr><td>2016-02-10 04:22:21.222923</td>
+<td>ac:22:0b:49:a1:3b</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+<tr><td>2016-02-10 04:22:21.261621</td>
+<td>ac:22:0b:49:a1:3b</td>
+<td>0</td>
+<td>&lt;None&gt;</td>
+<td>ASUSTek COMPUTER INC.</td>
+</tr>
+</tbody></table>
+
+
+
+
+
+
+
+
+
+        <div id="status" name="status">Status Message</div>
+      </div>
+
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">Created by Change In Pi </p> 
+      </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
