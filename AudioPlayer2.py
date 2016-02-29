@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import os
 import sys
-from optparse import OptionParser;
+from optparse import OptionParser
 import time
 import math
 f = open("/var/www/html/Bell/waittime.txt", "r")
@@ -64,6 +64,6 @@ elif min_len == 1:
 	print Bash_Time.read()
 else:
 	print "Nothing"
-#	Bash_Time = return os.popen("omxplayer " + path + "Wait_Time_TooLong.wav")
+
 Bash_Time = os.popen("omxplayer " + path + "Wait_Time_Minutes.wav")
 print Bash_Time.read()
