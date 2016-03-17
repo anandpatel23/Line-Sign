@@ -33,31 +33,6 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <!--<script type="text/javascript">
-    
-         var db = openDatabase('log.db', '1.0', 'Test DB', 2 * 1024 * 1024);
-         var msg;
-
-         console.log("before transaction");
-         db.transaction(function (tx) {
-          console.log("into transaction, before execute");
-          console.log("tx: ", tx);
-            tx.executeSql('SELECT * FROM *', [], function (tx, results) {
-               console.log("into execute, before length");               
-               var len = results.rows.length, i;
-               console.log("length is" + len);
-               msg = "<p>Found rows: " + len + "</p>";
-               document.querySelector('#status').innerHTML +=  msg;
-          
-               for (i = 0; i < len; i++){
-                  msg = "<p><b>" + results.rows.item(i).log + "</b></p>";
-                  document.querySelector('#status').innerHTML +=  msg;
-               }
-            }, null);
-         });
-      
-      </script>-->
   </head>
 
   <body>
